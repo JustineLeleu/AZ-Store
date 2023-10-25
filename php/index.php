@@ -5,6 +5,7 @@
     <link rel="stylesheet" href="../dist/style.css" type="text/css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AZ-Store</title>
+    <script defer src="../script/main.js"></script>
 </head>
 <body>
 
@@ -16,6 +17,7 @@ require 'partials/section-2.php';
 require 'partials/section-3.php';
 require 'partials/section-4.php';
 require 'partials/footer.php';
+require 'shopping-cart.php';
 
 ?>
     

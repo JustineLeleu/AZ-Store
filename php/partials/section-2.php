@@ -12,7 +12,7 @@
             {
                 ?>
 
-                <div class="products-card">
+                <div>
 
                     <img src="<?php echo $product['image_url']; ?>" alt="shoe image">
                     <div>
