@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AZ-Store</title>
 </head>
-<body>
+<body class="bg-gradient-to-b from-blue-700 text-white to-black">
 
 <?php
 
