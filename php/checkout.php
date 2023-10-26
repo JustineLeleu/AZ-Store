@@ -1,3 +1,58 @@
+<?php
+
+function requireField($input) {
+    $errorMessage = "Please complete all fields of the form.";
+    $successMessage = "Thank you for your order";
+
+    if (empty($input)) {
+        echo `<script>alert($errorMessage)</script>`;
+    } else {
+        echo `<script>alert($successMessage)</script>`;
+    }
+}
+
+function validateEmail($email) {
+    $errorMessage = "Please enter a valid email address.";
+    $successMessage = "Thank you for your order";
+
+    if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        echo `<script>alert($errorMessage)</script>`;
+    }
+}
+
+function valideZipCode($zip) {
+
+    if (is_numeric($zip) && is_int($zip + 0)) {
+        return true;
+    } else {
+        return false;
+    }
+
+}
+
+if (isset($_GET["submit"])) {
+
+    $firstName = isset($_GET["firstName"]) ? $_GET["firstName"] : "";
+    $lastName = isset($_GET["lastName"]) ? $_GET["lastName"] : "";
+    $email = isset($_GET["email"]) ? $_GET["email"] : "";
+    $address = isset($_GET["address"])? $_GET["address"] : "";
+    $city = isset($_GET["city"]) ? $_GET["city"] : "";
+    $zip = isset($_GET["zip"]) ? $_GET["zip"] : "";
+    $country = isset($_GET["country"]) ? $_GET["country"] : "";
+    $message = isset($_GET["message"]) ? $_GET["message"] : "";
+
+    requireField($firstName AND $lastName AND $email AND $address AND $city AND $zip AND $country);
+    validateEmail($email);
+    valideZipcode($zip);
+
+    if (valideZipCode($zip) == false) {
+        $errorMessage = "Please enter a valid zip code";
+        echo "<script> alert($errorMessage)</script>";
+    }
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,17 +68,14 @@
 <?php
 require 'partials/nav.php';
 ?>
-<section class="bg-white py-20 lg:py-[120px] overflow-hidden relative z-10">
+<section class="bg-gradient-to-b from-gray-900 text-white to-black py-20 lg:py-[120px] overflow-hidden relative z-10">
    <div class="container">
       <div class="flex flex-wrap lg:justify-between -mx-4">
          <div class="w-full lg:w-1/2 xl:w-6/12 px-4">
             <div class="max-w-[570px] mb-12 lg:mb-0">
-               <span class="block mb-4 text-base text-primary font-semibold">
-               Contact Us
-               </span>
                <h2
                   class="
-                  text-dark
+                  text-white
                   mb-6
                   uppercase
                   font-bold
@@ -40,6 +92,70 @@ require 'partials/nav.php';
                   eius tempor incididunt ut labore et dolore magna aliqua. Ut enim
                   adiqua minim veniam quis nostrud exercitation ullamco
                </p>
+               <section>
+                <div class="px-3 md:w-5/12">
+                    <div class="w-full mx-auto rounded-lg bg-white border border-gray-200 text-gray-800 font-light mb-6">
+                        <div class="w-full p-3 border-b border-gray-200">
+                            <div class="mb-5">
+                                <label for="type1" class="flex items-center cursor-pointer">
+                                    <input type="radio" class="form-radio h-5 w-5 text-indigo-500" name="type" id="type1" checked>
+                                    <img src="https://leadershipmemphis.org/wp-content/uploads/2020/08/780370.png" class="h-6 ml-3">
+                                </label>
+                            </div>
+                            <div>
+                                <div class="mb-3">
+                                    <label class="text-gray-600 font-semibold text-sm mb-2 ml-1">Name on card</label>
+                                    <div>
+                                        <input class="w-full px-3 py-2 mb-1 border border-gray-200 rounded-md focus:outline-none focus:border-indigo-500 transition-colors" placeholder="John Smith" type="text"/>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <label class="text-gray-600 font-semibold text-sm mb-2 ml-1">Card number</label>
+                                    <div>
+                                        <input class="w-full px-3 py-2 mb-1 border border-gray-200 rounded-md focus:outline-none focus:border-indigo-500 transition-colors" placeholder="0000 0000 0000 0000" type="text"/>
+                                    </div>
+                                </div>
+                                <div class="mb-3 -mx-2 flex items-end">
+                                    <div class="px-2 w-1/4">
+                                        <label class="text-gray-600 font-semibold text-sm mb-2 ml-1">Expiration date</label>
+                                        <div>
+                                            <select class="form-select w-full px-3 py-2 mb-1 border border-gray-200 rounded-md focus:outline-none focus:border-indigo-500 transition-colors cursor-pointer">
+                                                <option value="01">01 - January</option>
+                                                <option value="02">02 - February</option>
+                                                <option value="03">03 - March</option>
+                                                <option value="04">04 - April</option>
+                                                <option value="05">05 - May</option>
+                                                <option value="06">06 - June</option>
+                                                <option value="07">07 - July</option>
+                                                <option value="08">08 - August</option>
+                                                <option value="09">09 - September</option>
+                                                <option value="10">10 - October</option>
+                                                <option value="11">11 - November</option>
+                                                <option value="12">12 - December</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="px-2 w-1/4">
+                                        <select class="form-select w-full px-3 py-2 mb-1 border border-gray-200 rounded-md focus:outline-none focus:border-indigo-500 transition-colors cursor-pointer">
+                                            <option value="2020">2020</option>
+                                            <option value="2021">2021</option>
+                                            <option value="2022">2022</option>
+                                            <option value="2023">2023</option>
+                                            <option value="2024">2024</option>
+                                            <option value="2025">2025</option>
+                                            <option value="2026">2026</option>
+                                            <option value="2027">2027</option>
+                                            <option value="2028">2028</option>
+                                            <option value="2029">2029</option>
+                                        </select>
+                                    </div>
+                                    <div class="px-2 w-1/4">
+                                        <label class="text-gray-600 font-semibold text-sm mb-2 ml-1">Security code</label>
+                                        <div>
+                                            <input class="w-full px-3 py-2 mb-1 border border-gray-200 rounded-md focus:outline-none focus:border-indigo-500 transition-colors" placeholder="000" type="text"/>
+                                        </div>
+                                    </div>
+               </section>
             </div>
          </div>
          <div class="w-full lg:w-1/2 xl:w-5/12 px-4">
@@ -171,9 +287,9 @@ require 'partials/nav.php';
                         name="country"
                         />
                   </div>
-                  <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-2 p-4">
+                <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-2 p-4">
                     <label>
-                        <input type="radio" value="1" class="peer hidden" name="framework">
+                        <input type="radio" value="1" class="peer hidden" name="delivery">
                         
                         <div class="hover:bg-gray-50 flex items-center justify-between px-4 py-2 border-2 rounded-lg cursor-pointer text-sm border-gray-200 group peer-checked:border-blue-500">
                             <h2 class="font-medium text-gray-700">Free delivery</h2>
@@ -184,7 +300,7 @@ require 'partials/nav.php';
                     </label>
 
                     <label>
-                        <input type="radio" value="2" class="peer hidden" name="framework">
+                        <input type="radio" value="2" class="peer hidden" name="delivery">
                         
                         <div class="hover:bg-gray-50 flex items-center justify-between px-4 py-2 border-2 rounded-lg cursor-pointer text-sm border-gray-200 group peer-checked:border-blue-500">
                             <h2 class="font-medium text-gray-700">Premium Delivery + 14,99 €</h2>
@@ -239,58 +355,7 @@ require 'partials/nav.php';
 </section>
 
 <?php
-
-function requireField($input) {
-    $errorMessage = "Please complete all fields of the form.";
-    $successMessage = "Thank you for your order";
-
-    if (empty($input)) {
-        echo "<p class='errorMessage'>$errorMessage</p>";
-    } else {
-        echo "<p class='successMessage'>$successMessage</p>";
-    }
-}
-
-function validateEmail($email) {
-    $errorMessage = "Please enter a valid email address.";
-    $successMessage = "Thank you for your order";
-
-    if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-        echo "<p class='errorMessage'>$errorMessage</p>";
-    }
-}
-
-function valideZipCode($zip) {
-
-    if (is_numeric($zip) && is_int($zip + 0)) {
-        return true;
-    } else {
-        return false;
-    }
-
-}
-
-if (isset($_GET["submit"])) {
-
-    $firstName = isset($_GET["firstName"]) ? $_GET["firstName"] : "";
-    $lastName = isset($_GET["lastName"]) ? $_GET["lastName"] : "";
-    $email = isset($_GET["email"]) ? $_GET["email"] : "";
-    $address = isset($_GET["address"])? $_GET["address"] : "";
-    $city = isset($_GET["city"]) ? $_GET["city"] : "";
-    $zip = isset($_GET["zip"]) ? $_GET["zip"] : "";
-    $country = isset($_GET["country"]) ? $_GET["country"] : "";
-    $message = isset($_GET["message"]) ? $_GET["message"] : "";
-
-    requireField($firstName AND $lastName AND $email AND $address AND $city AND $zip AND $country AND $message);
-    validateEmail($email);
-    valideZipcode($zip);
-
-    if (valideZipCode($zip) == false) {
-        echo "<p class='errorMessage'>Please enter a valid zip code</p>";
-    }
-}
-
-require 'partials/footer.php';
+require 'partials/footer.php'; 
 ?>
 
 
