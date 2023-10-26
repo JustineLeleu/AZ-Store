@@ -1,5 +1,5 @@
-<section id="section-2" class="p-4 mx-20" >
-    <h2 class="font-titleFont"><span class= 'text-blue-600'>Our</span> last products</h2>
+<section id="section-2" class="p-4 mx-20 border-t border-gray-800 border-opacity-90" >
+    <h2 class="font-titleFont text-xl"><span class= 'text-blue-600 '>Our</span> last products</h2>
 
 
     
