@@ -1,3 +1,12 @@
+<?php
+
+session_start();
+
+$productsJson = file_get_contents('./../data/products.json');
+$products = json_decode($productsJson, true);
+
+?>
+
 <section id="section-2" class="p-4">
     <h2 class=""><span>Our</span> last products</h2>
 
@@ -6,9 +15,6 @@
     <div id="products-container" class="flex flex-wrap">
         
             <?php
-
-            $productsJson = file_get_contents('./../data/products.json');
-            $products = json_decode($productsJson, true);
 
             foreach ($products as $product) 
             {
@@ -20,10 +26,9 @@
                         <h3 class="product "><?php echo $product['product']; ?></h3>
                         <p class="price "><?php echo $product['price'].'€'; ?></p>
                     </div>
-                    <button class="addToCartButton bg-blue-500  px-4 py-2 mt-2" value="<?php echo $product['id']; ?>">Add to cart</button>
-                    <!-- <form method="post">
-                        <input type="submit" name="addToCart" value="Add to cart" class="bg-blue-500  px-4 py-2 mt-2">
-                    </form> -->
+                    <form method="post">
+                        <button class="addToCartButton bg-blue-500  px-4 py-2 mt-2" name="addToCart" value="<?php echo $product['id']; ?>">Add to cart</button>
+                    </form>
                 </div>
             </div>
             <?php
@@ -31,3 +36,44 @@
         ?>
     </div>
 </section>
+
+<?php
+
+if (isset($_POST["addToCart"]))
+{
+    if (isset($_SESSION['shoppingCart']))
+    {
+        $item = array_search($_POST["addToCart"], array_column($_SESSION['shoppingCart'], 'id'));
+        
+        if ($item === false)
+        {
+            $key = array_search($_POST["addToCart"], array_column($products, 'id'));
+            $newItem = array(
+                'id' => $_POST["addToCart"],
+                'img' => $products[ $key ]['image_url'],
+                'name'=> $products[ $key ]['product'],
+                'price'=> $products[ $key ]['price'],
+                'count'=> 1
+            );
+            $_SESSION['shoppingCart'][] = $newItem;
+        }
+        else
+        {
+            $_SESSION['shoppingCart'][$item]['count']++;
+        }
+    }
+    else
+    {
+        $key = array_search($_POST["addToCart"], array_column($products, 'id'));
+        $newItem = array(
+            'id' => $_POST["addToCart"],
+            'img' => $products[ $key ]['image_url'],
+            'name'=> $products[ $key ]['product'],
+            'price'=> $products[ $key ]['price'],
+            'count'=> 1
+        );
+        $_SESSION['shoppingCart'][] = $newItem;
+    }
+}
+
+?>
