@@ -95,7 +95,7 @@ require 'partials/nav.php';
                </p>
                <section>
                 <div class="px-3 md:w-5/12">
-                    <div class="relative bottom-3/4 w-96 mx-auto rounded-lg bg-white border border-gray-200 text-gray-800 font-light mb-6">
+                    <div class="absolute bottom-16 w-96 mx-auto rounded-lg bg-white border border-gray-200 text-gray-800 font-light mb-6">
                         <div class="w-full p-3 border-b border-gray-200">
                             <div class="mb-5">
                                 <label for="type1" class="flex items-center cursor-pointer">
