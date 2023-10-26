@@ -55,11 +55,11 @@ if (isset($_POST["addToCart"]))
                 'price'=> $products[ $key ]['price'],
                 'count'=> 1
             );
-            $_SESSION['shoppingCart'][] = $newItem;
+            $_SESSION['shoppingCart'][$_POST["addToCart"]] = $newItem;
         }
         else
         {
-            $_SESSION['shoppingCart'][$item]['count']++;
+            $_SESSION['shoppingCart'][$_POST["addToCart"]]['count']++;
         }
     }
     else
@@ -72,7 +72,7 @@ if (isset($_POST["addToCart"]))
             'price'=> $products[ $key ]['price'],
             'count'=> 1
         );
-        $_SESSION['shoppingCart'][] = $newItem;
+        $_SESSION['shoppingCart'][$_POST["addToCart"]] = $newItem;
     }
 }
 
