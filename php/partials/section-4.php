@@ -1,4 +1,4 @@
-<section id="section-4" class="section-4 flex flex-row justify-center items-center space-x-4 my-20">
+<section id="section-4" class="section-4 flex flex-row justify-center items-center space-x-4 my-10">
     <div class="review1 flex flex-col justify-center items-center p-4">
         <div class="rounded-full overflow-hidden w-24 h-24 m-4">
             <img src="../asset/img/image-emily.jpg" alt="emily">
