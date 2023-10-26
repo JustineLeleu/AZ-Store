@@ -691,10 +691,6 @@ video {
   margin: 0.25rem;
 }
 
-.m-20 {
-  margin: 5rem;
-}
-
 .m-4 {
   margin: 1rem;
 }
@@ -713,24 +709,14 @@ video {
   margin-right: -1rem;
 }
 
-.mx-10 {
-  margin-left: 2.5rem;
-  margin-right: 2.5rem;
-}
-
-.mx-20 {
-  margin-left: 5rem;
-  margin-right: 5rem;
-}
-
-.mx-40 {
-  margin-left: 10rem;
-  margin-right: 10rem;
-}
-
 .mx-5 {
   margin-left: 1.25rem;
   margin-right: 1.25rem;
+}
+
+.mx-60 {
+  margin-left: 15rem;
+  margin-right: 15rem;
 }
 
 .mx-auto {
@@ -738,17 +724,13 @@ video {
   margin-right: auto;
 }
 
-.my-10 {
-  margin-top: 2.5rem;
-  margin-bottom: 2.5rem;
+.my-20 {
+  margin-top: 5rem;
+  margin-bottom: 5rem;
 }
 
 .mb-1 {
   margin-bottom: 0.25rem;
-}
-
-.mb-10 {
-  margin-bottom: 2.5rem;
 }
 
 .mb-12 {
@@ -896,10 +878,6 @@ video {
 
 .h-24 {
   height: 6rem;
-}
-
-.h-40 {
-  height: 10rem;
 }
 
 .h-5 {
@@ -1953,15 +1931,6 @@ video {
   border-color: rgb(229 231 235 / var(--tw-border-opacity));
 }
 
-.border-gray-800 {
-  --tw-border-opacity: 1;
-  border-color: rgb(31 41 55 / var(--tw-border-opacity));
-}
-
-.border-opacity-90 {
-  --tw-border-opacity: 0.9;
-}
-
 .bg-\[rgb\(255\2c 0\2c 0\)\] {
   --tw-bg-opacity: 1;
   background-color: rgb(255 0 0 / var(--tw-bg-opacity));
@@ -2111,21 +2080,12 @@ video {
      object-fit: scale-down;
 }
 
-.object-top {
-  -o-object-position: top;
-     object-position: top;
-}
-
 .p-3 {
   padding: 0.75rem;
 }
 
 .p-4 {
   padding: 1rem;
-}
-
-.p-5 {
-  padding: 1.25rem;
 }
 
 .p-8 {
@@ -2228,35 +2188,9 @@ video {
   vertical-align: super;
 }
 
-.font-NikeOutline {
-  font-family: Nike-Outline, sans;
-}
-
-.font-btn {
-  font-family: btn, sans;
-}
-
-.font-descFont {
-  font-family: descFont, sans;
-}
-
-.font-titleFont {
-  font-family: titleFont, sans;
-}
-
 .text-3xl {
   font-size: 1.875rem;
   line-height: 2.25rem;
-}
-
-.text-5xl {
-  font-size: 3rem;
-  line-height: 1;
-}
-
-.text-9xl {
-  font-size: 8rem;
-  line-height: 1;
 }
 
 .text-\[32px\] {
@@ -2271,11 +2205,6 @@ video {
 .text-sm {
   font-size: 0.875rem;
   line-height: 1.25rem;
-}
-
-.text-xl {
-  font-size: 1.25rem;
-  line-height: 1.75rem;
 }
 
 .font-bold {
@@ -2364,10 +2293,6 @@ video {
 
 .leading-relaxed {
   line-height: 1.625;
-}
-
-.tracking-widest {
-  letter-spacing: 0.1em;
 }
 
 .text-\[\#336699\]\/\[\.35\] {
