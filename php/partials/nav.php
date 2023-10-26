@@ -1,13 +1,15 @@
-<header>
-    <h1>AZ[store]</h1>
-    <ul class="navContainer">
+<header class="header h-20 flex flex-row justify-between items-center  p-4">
+    <h1 class="h1 text-3xl font-bold">AZ[store]</h1>
+    <ul class="navContainer flex flex-row space-x-4">
         <li><a class="navItems" href="">Home</a></li>
         <li><a class="navItems" href="">About</a></li>
         <li><a class="navItems" href="">Products</a></li>
         <li><a class="navItems" href="">Contact</a></li>
     </ul>
-        <a id="checkout">
-            <img id="checkoutIcon"src="/asset/img/shopping-cart.svg" alt="logo">
+    <div class="flex flex-row items-center space-x-4">
+        <label for="checkoutIcon">Login</label>
+        <a id="checkout" class="flex items-center">
+            <img id="checkoutIcon" src="/asset/img/shopping-cart.svg" alt="logo" class="w-6 h-6 text-blue-500">
         </a>
-    <label for="checkoutIcon">Login</label> 
-</header
+    </div>
+</header>
