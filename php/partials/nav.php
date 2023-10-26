@@ -1,4 +1,4 @@
-<header class="header h-20 flex flex-row justify-between items-center  p-5 ">
+<header class="header h-20 flex flex-row justify-between items-center p-5 border-b border-gray-800 border-opacity-90">
     <h1 class="h1 text-3xl font-bold">AZ[store]</h1>
     <ul class="navContainer flex flex-row space-x-4">
         <li><a class="navItems mx-5 font-descFont" href="/php/index.php">Home</a></li>
