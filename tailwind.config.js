@@ -2,8 +2,14 @@
 module.exports = {
   content: ['./**/*.{html,js,php}'],
   theme: {
-    extend: {},
-  },
-  plugins: [],
+    extend: {
+      fontFamily: {
+        btn: ['btn', 'sans'],
+        descFont: ['descFont', 'sans'],
+        NikeOutline: ['Nike-Outline', 'sans'],
+        title: ['title', 'sans'],
+      },
+    },
+  },  plugins: [],
 }
 

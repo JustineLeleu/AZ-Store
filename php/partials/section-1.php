@@ -7,7 +7,7 @@
 
     <div class="nike ">
         <img class="h-80" id="shoe" src="/asset/img/shoe_one.png" alt="shoe">
-        <h1 id="brand" class=''>NIKE</h1>
+        <h1 id="brand" class='font-NikeOutline'>NIKE</h1>
     </div>
 
 </section>
