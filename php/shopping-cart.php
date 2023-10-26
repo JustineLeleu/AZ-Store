@@ -21,10 +21,13 @@ if (isset($_POST['deleteAll']))
 $itemsCount = 0;
 $totalPrice = 0;
 
-foreach ($_SESSION['shoppingCart']  as $value) 
+if (isset($_SESSION['shoppingCart']))
 {
-    $itemsCount += $value['count'];
-    $totalPrice += $value['price'];
+    foreach ($_SESSION['shoppingCart']  as $value) 
+    {
+        $itemsCount += $value['count'];
+        $totalPrice += $value['price'];
+    }
 }
 
 ?>
