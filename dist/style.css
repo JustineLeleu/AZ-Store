@@ -1014,6 +1014,14 @@ video {
   width: 24rem;
 }
 
+.w-10 {
+  width: 2.5rem;
+}
+
+.w-4 {
+  width: 1rem;
+}
+
 .max-w-\[570px\] {
   max-width: 570px;
 }
