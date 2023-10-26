@@ -6,8 +6,8 @@
     </div>
 
     <div class="nike">
-        <img class="h-100" id="shoe" src="/asset/img/shoe_one.png" alt="shoe">
-        <h1 id="brand" class='font-NikeOutline text-9xl'>NIKE</h1>
+        <img class="h-100 z-2" id="shoe" src="/asset/img/shoe_one.png" alt="shoe">
+        <h1 id="brand" class='font-NikeOutline text-9xl z-1'>NIKE</h1>
     </div>
 
 </section>
