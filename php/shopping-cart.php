@@ -1,4 +1,5 @@
 <?php
+session_start();
 
 $shoppingCart = [];
 $shoppingCart[] = array(
@@ -9,34 +10,16 @@ $shoppingCart[] = array(
 );
 $shoppingCart[] = array(
     'img' => './../asset/img/shoe_one.png',
-    'name'=> 'Nike Superstar',
+    'name'=> 'Nike Superstar 2',
     'price'=> 500,
-    'count'=> 2
+    'count'=> 1
 );
 
-/*
-
-[ 
-    {
-        img;
-        name;
-        price;
-        count;
-    },
-    {
-        img;
-        name;
-        price;
-        count;
-    }
-]
-
-*/
-
+$_SESSION['shoppingCart'] = $shoppingCart;
 ?>
 
 <div id="shopping-cart" class="w-3/4 h-full fixed right-0 top-0 bg-gray-200 text-black hidden">
-    <button id="closeCartButton" class="fixed">arrow</button>
+    <button id="closeCartButton" class="fixed w-10"><img src="./../asset/img/arrow.png" alt="arrow"></button>
     <h2 class="text-center">Shopping cart</h2>
 
     <div class="flex flex-col items-center gap-0.5">
@@ -54,8 +37,8 @@ $shoppingCart[] = array(
                 <div class="flex items-center">
                     <div>1</div>
                     <div class="flex flex-col">
-                        <button>up</button>
-                        <button>down</button>
+                        <button><img src="./../asset/img/arrow-up.png" alt="arrow" class="w-4"></button>
+                        <button><img src="./../asset/img/arrow-down.png" alt="arrow" class="w-4"></button>
                     </div>
                 </div>
                 <div>500€</div>
@@ -65,31 +48,6 @@ $shoppingCart[] = array(
         }
 
         ?>
-
-        <!-- <div class="flex justify-around w-full items-center bg-white py-3">
-            <img src="./../asset/img/shoe_one.png" alt="" class="w-20">
-            <h4>Nike Superstar</h4>
-            <div class="flex items-center">
-                <div>1</div>
-                <div class="flex flex-col">
-                    <button>up</button>
-                    <button>down</button>
-                </div>
-            </div>
-            <div>500€</div>
-        </div>
-        <div class="flex justify-around w-full items-center bg-white py-3">
-            <img src="./../asset/img/shoe_one.png" alt="" class="w-20">
-            <h4>Nike Superstar</h4>
-            <div class="flex items-center">
-                <div>1</div>
-                <div class="flex flex-col">
-                    <button>up</button>
-                    <button>down</button>
-                </div>
-            </div>
-            <div>500€</div>
-        </div> -->
     </div>
 
     <div class="flex flex-col items-center">

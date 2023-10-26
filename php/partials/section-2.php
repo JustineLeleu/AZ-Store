@@ -20,7 +20,10 @@
                         <h3 class="product "><?php echo $product['product']; ?></h3>
                         <p class="price "><?php echo $product['price'].'€'; ?></p>
                     </div>
-                    <button class="bg-blue-500  px-4 py-2 mt-2">Add to cart</button>
+                    <button class="addToCartButton bg-blue-500  px-4 py-2 mt-2" value="<?php echo $product['id']; ?>">Add to cart</button>
+                    <!-- <form method="post">
+                        <input type="submit" name="addToCart" value="Add to cart" class="bg-blue-500  px-4 py-2 mt-2">
+                    </form> -->
                 </div>
             </div>
             <?php
