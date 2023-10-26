@@ -7,7 +7,7 @@ module.exports = {
         btn: ['btn', 'sans'],
         descFont: ['descFont', 'sans'],
         NikeOutline: ['Nike-Outline', 'sans'],
-        title: ['title', 'sans'],
+        titleFont: ['titleFont', 'sans'],
       },
     },
   },  plugins: [],
