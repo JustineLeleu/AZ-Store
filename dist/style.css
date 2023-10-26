@@ -719,10 +719,6 @@ video {
   margin-top: 5rem;
   margin-bottom: 5rem;
 }
-.-mx-4 {
-  margin-left: -1rem;
-  margin-right: -1rem;
-}
 
 .mb-10 {
   margin-bottom: 2.5rem;
@@ -2099,18 +2095,12 @@ video {
   font-size: 1.875rem;
   line-height: 2.25rem;
 }
-.text-4xl {
-  font-size: 2.25rem;
-  line-height: 2.5rem;
-}
+
 .text-5xl {
   font-size: 3rem;
   line-height: 1;
 }
-.text-7xl {
-  font-size: 4.5rem;
-  line-height: 1;
-}
+
 .text-9xl {
   font-size: 8rem;
   line-height: 1;
