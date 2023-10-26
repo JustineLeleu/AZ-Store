@@ -1,55 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" href="../dist/style.css" type="text/css">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AZ-Store</title>
-    <script defer src="../script/main.js"></script>
-</head>
-<body class="bg-gradient-to-b from-gray-900 text-white to-black"> 
-
-<?php
-require 'partials/nav.php';
-?>
-<form class="formContainer" method="get" action="">
-    <div id="name">
-        <label for="firstName">First name</label>
-        <input type="text" placeholder="First name" name="firstName">
-    </div>
-    <div id="last">
-        <label for="lastName">Last name</label>
-        <input type="text" placeholder="Last name" name="lastName">
-    </div>
-    <div id="email">
-        <label for="email">Email</label>
-        <input type="text" placeholder="Email" name="email">
-    </div>
-    <div id="address">
-        <label for="address">Address</label>
-        <input type="text" placeholder="Address" name="address">
-    </div>
-    <div id="city">
-        <label for="city">City</label>
-        <input type="text" placeholder="City" name="city">
-    </div>
-    <div id="zipCode">
-        <label for="state">Zip code</label>
-        <input type="text" placeholder="Zip" name="zip">
-    </div>
-    <div id="country">
-        <label for="country">Country</label>
-        <input type="text" placeholder="Country" name="country">
-    </div>
-    <div id="shipping">
-        <label for="shipping">Shipping</label>
-        <select name="shipping">
-            <option value="standard">Standard [ FREE ]</option>
-            <option value="express">Express [ + 14,99$]</option>
-        </select>
-    </div>
-    <input type="submit" name="submit" value="Checkout" id="checkoutBtn">
-</form>
 
 <?php
 
@@ -147,7 +95,7 @@ require 'partials/nav.php';
                </p>
                <section>
                 <div class="px-3 md:w-5/12">
-                    <div class="w-full mx-auto rounded-lg bg-white border border-gray-200 text-gray-800 font-light mb-6">
+                    <div class="relative bottom-3/4 w-96 mx-auto rounded-lg bg-white border border-gray-200 text-gray-800 font-light mb-6">
                         <div class="w-full p-3 border-b border-gray-200">
                             <div class="mb-5">
                                 <label for="type1" class="flex items-center cursor-pointer">
