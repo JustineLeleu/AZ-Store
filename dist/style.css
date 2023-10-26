@@ -691,8 +691,16 @@ video {
   margin: 1rem;
 }
 
+.m-40 {
+  margin: 10rem;
+}
+
 .m-5 {
   margin: 1.25rem;
+}
+
+.m-20 {
+  margin: 5rem;
 }
 
 .mx-10 {
@@ -705,23 +713,24 @@ video {
   margin-right: 5rem;
 }
 
+.mx-40 {
+  margin-left: 10rem;
+  margin-right: 10rem;
+}
+
 .mx-5 {
   margin-left: 1.25rem;
   margin-right: 1.25rem;
 }
 
-.mx-60 {
-  margin-left: 15rem;
-  margin-right: 15rem;
+.my-10 {
+  margin-top: 2.5rem;
+  margin-bottom: 2.5rem;
 }
 
 .my-20 {
   margin-top: 5rem;
   margin-bottom: 5rem;
-}
-.-mx-4 {
-  margin-left: -1rem;
-  margin-right: -1rem;
 }
 
 .mb-10 {
@@ -857,6 +866,10 @@ video {
 
 .h-full {
   height: 100%;
+}
+
+.h-80 {
+  height: 20rem;
 }
 
 .w-20 {
@@ -1841,6 +1854,32 @@ video {
   border-style: none;
 }
 
+.border-transparent {
+  border-color: transparent;
+}
+
+.border-gray-900 {
+  --tw-border-opacity: 1;
+  border-color: rgb(17 24 39 / var(--tw-border-opacity));
+}
+
+.border-gray-800 {
+  --tw-border-opacity: 1;
+  border-color: rgb(31 41 55 / var(--tw-border-opacity));
+}
+
+.border-opacity-25 {
+  --tw-border-opacity: 0.25;
+}
+
+.border-opacity-80 {
+  --tw-border-opacity: 0.8;
+}
+
+.border-opacity-90 {
+  --tw-border-opacity: 0.9;
+}
+
 .bg-\[rgb\(255\2c 0\2c 0\)\] {
   --tw-bg-opacity: 1;
   background-color: rgb(255 0 0 / var(--tw-bg-opacity));
@@ -1990,6 +2029,11 @@ video {
      object-fit: scale-down;
 }
 
+.object-top {
+  -o-object-position: top;
+     object-position: top;
+}
+
 .p-4 {
   padding: 1rem;
 }
@@ -2099,21 +2143,20 @@ video {
   font-size: 1.875rem;
   line-height: 2.25rem;
 }
-.text-4xl {
-  font-size: 2.25rem;
-  line-height: 2.5rem;
-}
+
 .text-5xl {
   font-size: 3rem;
   line-height: 1;
 }
-.text-7xl {
-  font-size: 4.5rem;
-  line-height: 1;
-}
+
 .text-9xl {
   font-size: 8rem;
   line-height: 1;
+}
+
+.text-xl {
+  font-size: 1.25rem;
+  line-height: 1.75rem;
 }
 
 .font-bold {
@@ -2186,6 +2229,10 @@ video {
 .stacked-fractions {
   --tw-numeric-fraction: stacked-fractions;
   font-variant-numeric: var(--tw-ordinal) var(--tw-slashed-zero) var(--tw-numeric-figure) var(--tw-numeric-spacing) var(--tw-numeric-fraction);
+}
+
+.tracking-widest {
+  letter-spacing: 0.1em;
 }
 
 .text-\[\#336699\]\/\[\.35\] {
