@@ -1,10 +1,10 @@
-<header class="header h-20 flex flex-row justify-between items-center  p-4">
+<header class="header h-20 flex flex-row justify-center items-center  p-4 ">
     <h1 class="h1 text-3xl font-bold">AZ[store]</h1>
     <ul class="navContainer flex flex-row space-x-4">
-        <li><a class="navItems" href="">Home</a></li>
-        <li><a class="navItems" href="">About</a></li>
-        <li><a class="navItems" href="">Products</a></li>
-        <li><a class="navItems" href="">Contact</a></li>
+        <li><a class="navItems mx-5" href="">Home</a></li>
+        <li><a class="navItems mx-5" href="">About</a></li>
+        <li><a class="navItems mx-5" href="">Products</a></li>
+        <li><a class="navItems mx-5" href="">Contact</a></li>
     </ul>
     <div class="flex flex-row items-center space-x-4">
         <label for="checkoutIcon">Login</label>

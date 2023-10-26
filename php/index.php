@@ -7,7 +7,7 @@
     <title>AZ-Store</title>
     <script defer src="../script/main.js"></script>
 </head>
-<body class="bg-gradient-to-b from-blue-700 text-white to-black">
+<body class="bg-gradient-to-b from-gray-900 text-white to-black">
 
 <?php
 
