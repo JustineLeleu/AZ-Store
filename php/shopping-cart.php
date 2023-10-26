@@ -71,6 +71,6 @@ foreach ($_SESSION['shoppingCart']  as $value)
             <p>Total</p>
             <div><?php echo $totalPrice."€"; ?></div>
         </div>
-        <button class="bg-gray-900 text-white px-20 py-2 rounded-3xl">Checkout</button>
+        <a href="/php/checkout.php" class="bg-gray-900 text-white px-20 py-2 rounded-3xl">Checkout</a>
     </div>
 </div>
