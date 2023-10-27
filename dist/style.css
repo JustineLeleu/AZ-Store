@@ -930,6 +930,10 @@ video {
   height: 100%;
 }
 
+.h-40 {
+  height: 10rem;
+}
+
 .w-1\/4 {
   width: 25%;
 }
@@ -976,6 +980,10 @@ video {
 
 .w-full {
   width: 100%;
+}
+
+.w-60 {
+  width: 15rem;
 }
 
 .flex-shrink {

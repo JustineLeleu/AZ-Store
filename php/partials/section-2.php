@@ -20,7 +20,7 @@ $products = json_decode($productsJson, true);
             {
                 ?>
             <div class="product-card bg-gradient-to-b from-gray-900 to-black  p-4 m-4">
-                <img class="img-item h-50 w-50 p-4 " src="<?php echo $product['image_url']; ?>" alt="shoe image">
+                <img class="img-item h-50 p-4 " src="<?php echo $product['image_url']; ?>" alt="shoe image">
                 <div class="items flex flex-row justify-between ">
                     <div class="cart mx-4">
                         <h3 class="product font-descFont"><?php echo $product['product']; ?></h3>

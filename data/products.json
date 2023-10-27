@@ -22,17 +22,5 @@
         "product": "Nike Air Max",
         "price": 199,
         "image_url": "/asset/img/shoe_four.png"
-    },
-    {
-        "id": 5,
-        "product": "Nike Air Max P",
-        "price": 229,
-        "image_url": "/asset/img/shoe_five.png"
-    },
-    {
-        "id": 6,
-        "product": "Nike Dunk Low",
-        "price": 234,
-        "image_url": "/asset/img/shoe_six.png"
     }
  ]
