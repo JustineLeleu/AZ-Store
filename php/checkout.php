@@ -5,7 +5,6 @@
     <link rel="stylesheet" href="../dist/style.css" type="text/css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AZ-Store</title>
-    <script defer src="../script/main.js"></script>
 </head>
 <body class="bg-gradient-to-b from-gray-900 text-white to-black"> 
 

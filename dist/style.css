@@ -639,20 +639,12 @@ video {
   inset-inline-end: 0.25rem;
 }
 
-.right-0 {
-  right: 0px;
+.left-2 {
+  left: 0.5rem;
 }
 
 .right-2 {
   right: 0.5rem;
-}
-
-.top-0 {
-  top: 0px;
-}
-
-.left-2 {
-  left: 0.5rem;
 }
 
 .isolate {
@@ -952,10 +944,6 @@ video {
 
 .w-24 {
   width: 6rem;
-}
-
-.w-3\/4 {
-  width: 75%;
 }
 
 .w-4 {

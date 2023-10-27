@@ -47,14 +47,13 @@ if (isset($_SESSION['shoppingCart']))
     <link rel="stylesheet" href="../dist/style.css" type="text/css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AZ-Store</title>
-    <script defer src="../script/main.js"></script>
 </head>
 <body>
     <div id="shopping-cart" class="w-full h-full fixed bg-gray-900 text-white">
         <div class="grid grid-cols-1 grid-rows-[1fr,4fr,1fr] h-full gap-0.5">
             <div class="self-center">
                 <form action="/php/index.php">
-                    <button id="closeCartButton" class="fixed left-2 w-10 rotate-180"><img src="./../asset/img/arrow.png" alt="arrow"></button>
+                    <button class="fixed left-2 w-10 rotate-180"><img src="./../asset/img/arrow.png" alt="arrow"></button>
                 </form>
                 <form method="post">
                     <button name="deleteAll" class="fixed right-2 w-10"><img src="./../asset/img/delete-all.png" alt="delete all image"></button>
