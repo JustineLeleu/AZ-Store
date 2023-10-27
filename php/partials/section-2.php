@@ -12,15 +12,15 @@ $products = json_decode($productsJson, true);
 
 
     
-    <div id="products-container" class="flex flex-row justify-around overflow-auto no-scrollbar">
+    <div id="products-container" class="flex flex-row justify-center">
         
             <?php
 
             foreach ($products as $product) 
             {
                 ?>
-            <div class="product-card bg-gradient-to-b from-gray-900 to-black  p-4 m-4">
-                <img class="img-item h-40 p-4 " src="<?php echo $product['image_url']; ?>" alt="shoe image">
+            <div class="product-card bg-gradient-to-b from-gray-900 to-black p-4 m-4">
+                <img class="img-item h-60 p-4 object-contain" src="<?php echo $product['image_url']; ?>" alt="shoe image">
                 <div class="items flex flex-row justify-between ">
                     <div class="cart">
                         <h3 class="product font-descFont"><?php echo $product['product']; ?></h3>
