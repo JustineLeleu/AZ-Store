@@ -799,6 +799,10 @@ video {
   margin-top: 5rem;
 }
 
+.mb-60 {
+  margin-bottom: 15rem;
+}
+
 .box-border {
   box-sizing: border-box;
 }
@@ -2167,10 +2171,6 @@ video {
 
 .p-40 {
   padding: 10rem;
-}
-
-.p-20 {
-  padding: 5rem;
 }
 
 .px-2 {
