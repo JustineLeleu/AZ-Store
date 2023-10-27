@@ -7,7 +7,7 @@
     },
     {
         "id": 2,
-        "product": "Nike Air Force Luxe",
+        "product": "Nike Air Force L",
         "price": 199,
         "image_url": "/asset/img/shoe_two.png"
     },
@@ -25,7 +25,7 @@
     },
     {
         "id": 5,
-        "product": "Nike Air Max Plus",
+        "product": "Nike Air Max P",
         "price": 229,
         "image_url": "/asset/img/shoe_five.png"
     },
