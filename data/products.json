@@ -1,26 +1,38 @@
 [
     {
         "id": 1,
-        "product": "Nike Air 1",
-        "price": 234,
+        "product": "Nike Air Force",
+        "price": 129,
         "image_url": "/asset/img/shoe_one.png"
     },
     {
         "id": 2,
-        "product": "Nike Air 2",
-        "price": 234,
-        "image_url": "/asset/img/shoe_one.png"
+        "product": "Nike Air Force Luxe",
+        "price": 199,
+        "image_url": "/asset/img/shoe_two.png"
     },
     {
         "id": 3,
-        "product": "Nike Air 3",
-        "price": 234,
-        "image_url": "/asset/img/shoe_one.png"
+        "product": "Nike P",
+        "price": 109,
+        "image_url": "/asset/img/shoe_three.png"
     },
     {
         "id": 4,
-        "product": "Nike Air 4",
+        "product": "Nike Air Max",
+        "price": 199,
+        "image_url": "/asset/img/shoe_four.png"
+    },
+    {
+        "id": 5,
+        "product": "Nike Air Max Plus",
+        "price": 229,
+        "image_url": "/asset/img/shoe_five.png"
+    },
+    {
+        "id": 6,
+        "product": "Nike Dunk Low",
         "price": 234,
-        "image_url": "/asset/img/shoe_one.png"
+        "image_url": "/asset/img/shoe_six.png"
     }
  ]
