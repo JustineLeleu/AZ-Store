@@ -34,6 +34,8 @@ if (isset($_SESSION['shoppingCart']))
     }
 }
 
+$item = ($itemsCount > 1) ? ' items' : ' item';
+
 ?>
 
 <div id="shopping-cart" class="w-3/4 h-full fixed right-0 top-0 bg-gray-900 text-white hidden">
@@ -44,7 +46,7 @@ if (isset($_SESSION['shoppingCart']))
                 <button name="deleteAll" class="fixed right-2 w-10"><img src="./../asset/img/delete-all.png" alt="delete all image"></button>
             </form>
             <h2 class="text-center text-3xl font-titleFont">Shopping cart</h2>
-            <h3 class="text-center font-descFont text-lg"><?php echo $itemsCount." items"; ?></h3>
+            <h3 class="text-center font-descFont text-lg"><?php echo $itemsCount.$item ; ?></h3>
         </div>
 
         <div class="flex flex-col items-center gap-0.5 font-descFont text-lg overflow-auto no-scrollbar">
