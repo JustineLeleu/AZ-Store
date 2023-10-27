@@ -1,16 +1,21 @@
 
 <?php
-session_start();
+if (!isset($_SESSION))
+{
+    session_start();
+}
 
 $itemsCount = 0;
 $totalPrice = 0;
 
-foreach ($_SESSION['shoppingCart']  as $value) 
+if (isset($_SESSION["shoppingCart"]))
 {
-    $itemsCount += $value['count'];
-    $totalPrice += $value['price'] * $value['count'];
+    foreach ($_SESSION['shoppingCart']  as $value) 
+    {
+        $itemsCount += $value['count'];
+        $totalPrice += $value['price'] * $value['count'];
+    }
 }
-
 
 function requireField($input) {
     $errorMessage = "Please complete all fields of the form.";

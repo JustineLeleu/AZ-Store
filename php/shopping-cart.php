@@ -1,5 +1,5 @@
 <?php
-if (!isset($_SESSION["shoppingCart"]))
+if (!isset($_SESSION))
 {
     session_start();
 }
