@@ -12,7 +12,7 @@ $products = json_decode($productsJson, true);
 
 
     
-    <div id="products-container" class="flex flex-row justify-around">
+    <div id="products-container" class="flex flex-row justify-around overflow-auto no-scrollbar">
         
             <?php
 

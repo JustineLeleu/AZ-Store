@@ -56,7 +56,7 @@ if (isset($_SESSION['shoppingCart']))
                 {
                     ?>
         
-                    <div class="flex justify-between w-full px-5 items-center bg-gray-200 text-black py-3 shadow-inner shadow-gray-400">
+                    <div class="grid grid-cols-[2fr,3fr,1fr,1fr,1fr] w-full items-center justify-items-center bg-gray-200 text-black py-3 shadow-inner shadow-gray-400">
                         <img src="<?php echo $value['img']; ?>" alt="" class="w-20">
                         <h4><?php echo $value['name']; ?></h4>
                         <div class="flex items-center gap-2">
