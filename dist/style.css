@@ -703,6 +703,10 @@ video {
   margin: 1rem;
 }
 
+.m-10 {
+  margin: 2.5rem;
+}
+
 .-mx-2 {
   margin-left: -0.5rem;
   margin-right: -0.5rem;
@@ -736,6 +740,16 @@ video {
 .my-10 {
   margin-top: 2.5rem;
   margin-bottom: 2.5rem;
+}
+
+.my-40 {
+  margin-top: 10rem;
+  margin-bottom: 10rem;
+}
+
+.mx-4 {
+  margin-left: 1rem;
+  margin-right: 1rem;
 }
 
 .mb-1 {
@@ -784,6 +798,10 @@ video {
 
 .mt-20 {
   margin-top: 5rem;
+}
+
+.mb-40 {
+  margin-bottom: 10rem;
 }
 
 .box-border {
@@ -963,6 +981,10 @@ video {
 
 .w-full {
   width: 100%;
+}
+
+.w-40 {
+  width: 10rem;
 }
 
 .flex-shrink {
@@ -2134,6 +2156,11 @@ video {
 .object-top {
   -o-object-position: top;
      object-position: top;
+}
+
+.object-left-top {
+  -o-object-position: left top;
+     object-position: left top;
 }
 
 .p-3 {
