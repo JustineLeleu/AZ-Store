@@ -1,23 +1,39 @@
 
 <?php
+session_start();
+
+$itemsCount = 0;
+$totalPrice = 0;
+
+foreach ($_SESSION['shoppingCart']  as $value) 
+{
+    $itemsCount += $value['count'];
+    $totalPrice += $value['price'];
+}
 
 function requireField($input) {
     $errorMessage = "Please complete all fields of the form.";
     $successMessage = "Thank you for your order";
+    $message = "";
 
     if (empty($input)) {
-        echo `<script>alert($errorMessage)</script>`;
+        $message = "<div class='bg-red-500 text-white font-bold rounded-lg border shadow-lg p-4 mx-auto mb-4 w-80 text-center animate__animated animate__fadeIn animate__delay-1s'>
+                <p>$errorMessage</p>
+            </div>";
     } else {
-        echo `<script>alert($successMessage)</script>`;
+        $message = "<p>$successMessage</p>";
     }
+
+    return $message;
 }
+
 
 function validateEmail($email) {
     $errorMessage = "Please enter a valid email address.";
     $successMessage = "Thank you for your order";
 
     if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-        echo `<script>alert($errorMessage)</script>`;
+        echo "<p>$errorMessage</p>";
     }
 }
 
@@ -30,6 +46,19 @@ function valideZipCode($zip) {
     }
 
 }
+function valideDelivery($delivery) {
+    $totalPrice = 0;
+
+    if ($delivery == '1'){
+        $messageDelivery = "Free delivery";
+    } else if ($delivery == '2'){
+        
+        $messageDelivery = "Premium Delivery + 14,99 €";
+        $totalPrice += 14.99;
+    } else {
+        echo "<p>Please select a delivery method</p>";
+    }
+}
 
 if (isset($_GET["submit"])) {
 
@@ -40,17 +69,20 @@ if (isset($_GET["submit"])) {
     $city = isset($_GET["city"]) ? $_GET["city"] : "";
     $zip = isset($_GET["zip"]) ? $_GET["zip"] : "";
     $country = isset($_GET["country"]) ? $_GET["country"] : "";
+    $delivery = isset($_GET["delivery"]) ? $_GET["delivery"] : "";
     $message = isset($_GET["message"]) ? $_GET["message"] : "";
 
-    requireField($firstName AND $lastName AND $email AND $address AND $city AND $zip AND $country);
+    requireField($firstName AND $lastName AND $email AND $address AND $city AND $zip AND $country AND $delivery);
     validateEmail($email);
     valideZipcode($zip);
+    valideDelivery($delivery);
 
     if (valideZipCode($zip) == false) {
         $errorMessage = "Please enter a valid zip code";
-        echo "<script> alert($errorMessage)</script>";
+        echo "<p>$errorMessage</p>";
     }
 }
+
 
 ?>
 
@@ -58,6 +90,7 @@ if (isset($_GET["submit"])) {
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
     <link rel="stylesheet" href="https://cdn.tailgrids.com/tailgrids-fallback.css" />
     <link rel="stylesheet" href="../dist/style.css" type="text/css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -69,11 +102,11 @@ if (isset($_GET["submit"])) {
 <?php
 require 'partials/nav.php';
 ?>
-<section class="bg-gradient-to-b from-gray-900 text-white to-black py-20 lg:py-[120px] overflow-hidden relative z-10">
-   <div class="container">
-      <div class="flex flex-wrap lg:justify-between -mx-4">
-         <div class="w-full lg:w-1/2 xl:w-6/12 px-4">
-            <div class="max-w-[570px] mb-12 lg:mb-0">
+<section class="bg-gradient-to-b from-gray-900  text-white to-black py-20 lg:py-[120px] overflow-hidden relative z-10">
+   <div class="container flex flex-row">
+      <div class="flex flex-col">
+         <div class="w-full px-4">
+            <div class="w-[600px] mb-12 lg:mb-0">
                <h2
                   class="
                   text-white
@@ -85,17 +118,45 @@ require 'partials/nav.php';
                   lg:text-[36px]
                   xl:text-[40px]
                   "
+                  
                   >
                   YOUR ORDER
+            <div class="flex flex-col items-center gap-0.5"> 
                </h2>
-               <p class="text-base text-body-color leading-relaxed mb-9">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                  eius tempor incididunt ut labore et dolore magna aliqua. Ut enim
-                  adiqua minim veniam quis nostrud exercitation ullamco
-               </p>
+                        <?php
+                    if (isset($_SESSION['shoppingCart']))
+                    {
+                        foreach ($_SESSION['shoppingCart'] as $value) 
+                        {
+                            ?>
+                            <div class="px-3 mb-3">
+                            <div class="flex justify-around w-full rounded-lg items-center bg-white text-black py-3 px-3">
+                                <img src="<?php echo $value['img']; ?>" alt="" class="w-20">
+                                <h4><?php echo $value['name']; ?></h4>
+                                <div class="flex items-center">
+                                    <div><?php echo $value['count']; ?></div>
+                                </div>
+                                <div><?php echo $value['price']."€"; ?></div>
+                            </div>
+                            </div>
+
+                
+                            <?php
+                        }   
+                    }
+
+                    ?>
+                </div>
+                <div class="flex justify-around w-full rounded-lg items-center bg-white text-black py-3 px-3 mb-3">
+                    <p>Total</p>
+                    <div><?php
+                     echo $totalPrice."€"; 
+                     ?>
+                     </div>
+                </div>
                <section>
-                <div class="px-3 md:w-5/12">
-                    <div class="absolute bottom-16 w-96 mx-auto rounded-lg bg-white border border-gray-200 text-gray-800 font-light mb-6">
+                <div class="px-3 w-full">
+                    <div class="w-full mx-auto rounded-lg bg-white border border-gray-200 text-gray-800 font-light mb-6">
                         <div class="w-full p-3 border-b border-gray-200">
                             <div class="mb-5">
                                 <label for="type1" class="flex items-center cursor-pointer">
@@ -159,7 +220,7 @@ require 'partials/nav.php';
                </section>
             </div>
          </div>
-         <div class="w-full lg:w-1/2 xl:w-5/12 px-4">
+         <div class="lg:mr-8 mb-4 lg:mb-0 md:w-full lg:w-full xl:w-5/12 px-4 ml-4 ">
             <div class="bg-white relative rounded-lg p-8 sm:p-12 shadow-lg">
                <form method="get" action="">
                   <div class="mb-6">
@@ -350,12 +411,14 @@ require 'partials/nav.php';
                   </div>
                </form>
             </div>
+        </div>
          </div>
       </div>
    </div>
 </section>
 
 <?php
+
 require 'partials/footer.php'; 
 ?>
 
