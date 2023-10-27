@@ -6,7 +6,7 @@ module.exports = {
       fontFamily: {
         btn: ['btn', 'sans'],
         descFont: ['descFont', 'sans'],
-        NikeOutline: ['Nike-Outline', 'sans'],
+        NikeOutline: ['NikeOutline', 'sans-serif'],
         titleFont: ['titleFont', 'sans'],
       },
     },
