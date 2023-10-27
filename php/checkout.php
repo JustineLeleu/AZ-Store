@@ -8,7 +8,7 @@ $totalPrice = 0;
 foreach ($_SESSION['shoppingCart']  as $value) 
 {
     $itemsCount += $value['count'];
-    $totalPrice += $value['price'];
+    $totalPrice += $value['price'] * $value['count'];
 }
 
 function requireField($input) {

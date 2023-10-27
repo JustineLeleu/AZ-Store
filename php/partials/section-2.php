@@ -1,7 +1,5 @@
 <?php
 
-session_start();
-
 $productsJson = file_get_contents('./../data/products.json');
 $products = json_decode($productsJson, true);
 

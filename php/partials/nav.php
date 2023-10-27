@@ -7,9 +7,9 @@
         <li><a class="navItems mx-5 font-descFont" href="">Contact</a></li>
     </ul>
     <div class="flex flex-row items-center space-x-4">
-        <img id="checkoutIcon" src="/asset/img/shopping-cart.svg" alt="logo" class="w-6 h-6 text-blue-500">
-        <label for="checkoutIcon">Login</label>
-            <a id="checkout" class="flex items-center">
+        <a id="checkout" class="flex items-center" href="/php/shopping-cart.php">
+            <img id="checkoutIcon" src="/asset/img/shopping-cart.svg" alt="logo" class="w-6 h-6 text-blue-500">
         </a>
+        <label for="checkoutIcon">Login</label>
     </div>
 </header>
