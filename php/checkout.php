@@ -11,21 +11,21 @@ foreach ($_SESSION['shoppingCart']  as $value)
     $totalPrice += $value['price'];
 }
 
+
 function requireField($input) {
     $errorMessage = "Please complete all fields of the form.";
     $successMessage = "Thank you for your order";
     $message = "";
 
     if (empty($input)) {
-        $message = "<div class='bg-red-500 text-white font-bold rounded-lg border shadow-lg p-4 mx-auto mb-4 w-80 text-center animate__animated animate__fadeIn animate__delay-1s'>
-                <p>$errorMessage</p>
-            </div>";
+        echo "<script>alert('$errorMessage');</script>";
     } else {
-        $message = "<p>$successMessage</p>";
+        echo "<script>alert('$successMessage');</script>";
+        unset($_SESSION['shoppingCart']);
+        $totalPrice = 0;
     }
+ }
 
-    return $message;
-}
 
 
 function validateEmail($email) {
@@ -33,32 +33,20 @@ function validateEmail($email) {
     $successMessage = "Thank you for your order";
 
     if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-        echo "<p>$errorMessage</p>";
+        echo "<script>alert('$errorMessage');</script>";
     }
 }
 
-function valideZipCode($zip) {
+function isNumber($zip) {
 
-    if (is_numeric($zip) && is_int($zip + 0)) {
+    if (is_numeric($zip && is_int($zip))) {
         return true;
     } else {
         return false;
     }
 
 }
-function valideDelivery($delivery) {
-    $totalPrice = 0;
 
-    if ($delivery == '1'){
-        $messageDelivery = "Free delivery";
-    } else if ($delivery == '2'){
-        
-        $messageDelivery = "Premium Delivery + 14,99 €";
-        $totalPrice += 14.99;
-    } else {
-        echo "<p>Please select a delivery method</p>";
-    }
-}
 
 if (isset($_GET["submit"])) {
 
@@ -69,20 +57,31 @@ if (isset($_GET["submit"])) {
     $city = isset($_GET["city"]) ? $_GET["city"] : "";
     $zip = isset($_GET["zip"]) ? $_GET["zip"] : "";
     $country = isset($_GET["country"]) ? $_GET["country"] : "";
-    $delivery = isset($_GET["delivery"]) ? $_GET["delivery"] : "";
     $message = isset($_GET["message"]) ? $_GET["message"] : "";
+    $cardName = isset($_GET["nameCard"]) ? $_GET["nameCard"] : "";
+    $cardNumber = isset($_GET["cardNumber"]) ? $_GET["cardNumber"] : "";
+    $secureCode = isset($_GET["secureCode"]) ? $_GET["secureCode"] : "";
 
-    requireField($firstName AND $lastName AND $email AND $address AND $city AND $zip AND $country AND $delivery);
+
+    requireField($firstName AND $lastName AND $email AND $address AND $city AND $zip AND $country AND $message AND $cardName AND $cardNumber AND $secureCode);
     validateEmail($email);
-    valideZipcode($zip);
-    valideDelivery($delivery);
+    isNumber($zip);
+    isNumber($cardNumber);
+    isNumber($secureCode);
 
-    if (valideZipCode($zip) == false) {
-        $errorMessage = "Please enter a valid zip code";
-        echo "<p>$errorMessage</p>";
+    if (isNumber($zip) == false) {
+        $zipErrorMessage = "Please enter a valid zip code";
+        echo "<script>alert('$zipErrorMessage');</script>";
+    }
+    if (isNumber($cardNumber) == false) {
+        $NumberCardErrorMessage ="Please enter a valid card number";
+        echo "<script>alert('$NumberCardErrorMessage');</script>";
+    }
+    if (isNumber($secureCode) == false) {
+        $secureCodeErrorMessage = "Please enter a valid security code";
+        echo "<script>alert('$secureCodeErrorMessage');</script>";
     }
 }
-
 
 ?>
 
@@ -168,13 +167,13 @@ require 'partials/nav.php';
                                 <div class="mb-3">
                                     <label class="text-gray-600 font-semibold text-sm mb-2 ml-1">Name on card</label>
                                     <div>
-                                        <input class="w-full px-3 py-2 mb-1 border border-gray-200 rounded-md focus:outline-none focus:border-indigo-500 transition-colors" placeholder="John Smith" type="text"/>
+                                        <input name="nameCard" class="w-full px-3 py-2 mb-1 border border-gray-200 rounded-md focus:outline-none focus:border-indigo-500 transition-colors" placeholder="John Smith" type="text"/>
                                     </div>
                                 </div>
                                 <div class="mb-3">
                                     <label class="text-gray-600 font-semibold text-sm mb-2 ml-1">Card number</label>
                                     <div>
-                                        <input class="w-full px-3 py-2 mb-1 border border-gray-200 rounded-md focus:outline-none focus:border-indigo-500 transition-colors" placeholder="0000 0000 0000 0000" type="text"/>
+                                        <input name="cardNumber" class="w-full px-3 py-2 mb-1 border border-gray-200 rounded-md focus:outline-none focus:border-indigo-500 transition-colors" placeholder="0000 0000 0000 0000" type="text"/>
                                     </div>
                                 </div>
                                 <div class="mb-3 -mx-2 flex items-end">
@@ -214,7 +213,7 @@ require 'partials/nav.php';
                                     <div class="px-2 w-1/4">
                                         <label class="text-gray-600 font-semibold text-sm mb-2 ml-1">Security code</label>
                                         <div>
-                                            <input class="w-full px-3 py-2 mb-1 border border-gray-200 rounded-md focus:outline-none focus:border-indigo-500 transition-colors" placeholder="000" type="text"/>
+                                            <input name="secureCode" class="w-full px-3 py-2 mb-1 border border-gray-200 rounded-md focus:outline-none focus:border-indigo-500 transition-colors" placeholder="000" type="text"/>
                                         </div>
                                     </div>
                </section>
@@ -349,29 +348,6 @@ require 'partials/nav.php';
                         name="country"
                         />
                   </div>
-                <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-2 p-4">
-                    <label>
-                        <input type="radio" value="1" class="peer hidden" name="delivery">
-                        
-                        <div class="hover:bg-gray-50 flex items-center justify-between px-4 py-2 border-2 rounded-lg cursor-pointer text-sm border-gray-200 group peer-checked:border-blue-500">
-                            <h2 class="font-medium text-gray-700">Free delivery</h2>
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-9 h-9 text-blue-600 invisible group-[.peer:checked+&]:visible">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                            </svg>
-                        </div>
-                    </label>
-
-                    <label>
-                        <input type="radio" value="2" class="peer hidden" name="delivery">
-                        
-                        <div class="hover:bg-gray-50 flex items-center justify-between px-4 py-2 border-2 rounded-lg cursor-pointer text-sm border-gray-200 group peer-checked:border-blue-500">
-                            <h2 class="font-medium text-gray-700">Premium Delivery + 14,99 €</h2>
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-9 h-9 text-blue-600 invisible group-[.peer:checked+&]:visible">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                            </svg>
-                        </div>
-                    </label>
-                </div>
                   <div class="mb-6">
                      <textarea
                         rows="6"
